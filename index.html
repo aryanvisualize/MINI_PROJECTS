@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A curated collection of interactive JavaScript mini projects.">
+    <title>Mini Projects | JavaScript Experiments</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="page-glow page-glow-one" aria-hidden="true"></div>
+    <div class="page-glow page-glow-two" aria-hidden="true"></div>
+
+    <header class="site-header">
+        <a class="brand" href="#home" aria-label="Mini Projects home">
+            <span class="brand-mark" aria-hidden="true">MP</span>
+            <span>Mini Projects</span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+            <span class="sr-only">Toggle navigation</span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <nav class="site-nav" id="site-nav" aria-label="Main navigation">
+            <a class="nav-link active" href="#home">Home</a>
+            <a class="nav-link" href="#projects">Projects</a>
+            <a class="nav-link" href="#about">About</a>
+            <a class="nav-cta" href="#projects">Explore work</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero" id="home">
+            <div class="hero-copy reveal">
+                <p class="eyebrow"><span></span> Frontend experiments, thoughtfully built</p>
+                <h1>Small projects.<br><em>Real interactions.</em></h1>
+                <p class="hero-description">
+                    A growing collection of focused web experiences built to explore APIs,
+                    DOM manipulation, and creative JavaScript.
+                </p>
+                <div class="hero-actions">
+                    <a class="button button-primary" href="#projects">
+                        View projects
+                        <span aria-hidden="true">↗</span>
+                    </a>
+                    <a class="button button-ghost" href="#about">How they're built</a>
+                </div>
+            </div>
+
+            <div class="hero-visual reveal" aria-label="Decorative code preview">
+                <div class="visual-card visual-card-main">
+                    <div class="window-bar">
+                        <div class="window-dots" aria-hidden="true"><span></span><span></span><span></span></div>
+                        <span>project.js</span>
+                    </div>
+                    <div class="code-lines" aria-hidden="true">
+                        <p><span class="code-purple">const</span> idea = <span class="code-green">"build"</span>;</p>
+                        <p><span class="code-purple">const</span> result = idea</p>
+                        <p class="indent">.design()</p>
+                        <p class="indent">.code()</p>
+                        <p class="indent">.launch();</p>
+                    </div>
+                    <div class="status-line"><span></span> Ready to explore</div>
+                </div>
+                <div class="visual-card visual-card-small card-api">
+                    <span class="mini-icon">&lt;/&gt;</span>
+                    <div><strong>API</strong><small>Connected</small></div>
+                </div>
+                <div class="visual-card visual-card-small card-dom">
+                    <span class="mini-icon">◆</span>
+                    <div><strong>DOM</strong><small>Interactive</small></div>
+                </div>
+            </div>
+
+            <a class="scroll-cue" href="#projects">
+                <span>Scroll to explore</span>
+                <span aria-hidden="true">↓</span>
+            </a>
+        </section>
+
+        <section class="projects-section section-shell" id="projects">
+            <div class="section-heading reveal">
+                <div>
+                    <p class="eyebrow"><span></span> Selected work</p>
+                    <h2>Projects with purpose</h2>
+                </div>
+                <p>Each project focuses on one core frontend concept, turning practice into something useful and fun.</p>
+            </div>
+
+            <div class="filter-bar reveal" role="group" aria-label="Filter projects">
+                <button class="filter-button active" type="button" data-filter="all">All projects</button>
+                <button class="filter-button" type="button" data-filter="api">API</button>
+                <button class="filter-button" type="button" data-filter="dom">DOM</button>
+                <button class="filter-button" type="button" data-filter="creative">Creative</button>
+            </div>
+
+            <div class="project-grid">
+                <article class="project-card featured reveal" data-category="api">
+                    <div class="project-preview preview-github">
+                        <div class="preview-browser">
+                            <div class="preview-browser-bar"><span></span><span></span><span></span></div>
+                            <div class="github-profile">
+                                <div class="avatar-placeholder">GH</div>
+                                <div class="profile-lines"><strong>Developer profile</strong><span></span><span></span></div>
+                            </div>
+                            <div class="profile-stats"><span>42<br><small>Repos</small></span><span>1.2k<br><small>Followers</small></span><span>86<br><small>Following</small></span></div>
+                        </div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-number">01</span>
+                            <span class="project-type">API project</span>
+                        </div>
+                        <h3>GitHub Profile Fetcher</h3>
+                        <p>Search any GitHub username and turn live API data into a clean, readable profile card.</p>
+                        <div class="project-footer">
+                            <ul class="tag-list" aria-label="Technologies used">
+                                <li>Fetch API</li>
+                                <li>Async data</li>
+                            </ul>
+                            <a class="project-link" href="github-profile-fetcher/index.html" aria-label="Open GitHub Profile Fetcher">
+                                <span>Open project</span><span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" data-category="dom">
+                    <div class="project-preview preview-shapes">
+                        <span class="shape shape-square"></span>
+                        <span class="shape shape-circle"></span>
+                        <span class="shape shape-rectangle"></span>
+                        <div class="shape-controls"><span></span><span></span><span></span></div>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-number">02</span>
+                            <span class="project-type">DOM project</span>
+                        </div>
+                        <h3>Shape Generator</h3>
+                        <p>Create custom sets of squares, circles, and rectangles with a color of your choice.</p>
+                        <div class="project-footer">
+                            <ul class="tag-list" aria-label="Technologies used">
+                                <li>DOM</li>
+                                <li>Forms</li>
+                            </ul>
+                            <a class="project-link" href="shape-generator/index.html" aria-label="Open Shape Generator">
+                                <span>Open project</span><span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="project-card reveal" data-category="creative">
+                    <div class="project-preview preview-circles">
+                        <span style="--x: 16%; --y: 22%; --size: 68px; --color: #ff6b6b"></span>
+                        <span style="--x: 52%; --y: 13%; --size: 42px; --color: #ffd166"></span>
+                        <span style="--x: 69%; --y: 45%; --size: 82px; --color: #7c5cff"></span>
+                        <span style="--x: 29%; --y: 59%; --size: 48px; --color: #27c499"></span>
+                        <span style="--x: 7%; --y: 69%; --size: 30px; --color: #65c7f7"></span>
+                        <p>Click. Create. Repeat.</p>
+                    </div>
+                    <div class="project-content">
+                        <div class="project-meta">
+                            <span class="project-number">03</span>
+                            <span class="project-type">Creative project</span>
+                        </div>
+                        <h3>Random Color Circle</h3>
+                        <p>Turn every click into a playful burst of color placed exactly where you choose.</p>
+                        <div class="project-footer">
+                            <ul class="tag-list" aria-label="Technologies used">
+                                <li>Events</li>
+                                <li>Randomization</li>
+                            </ul>
+                            <a class="project-link" href="random-color-circle/index.html" aria-label="Open Random Color Circle">
+                                <span>Open project</span><span aria-hidden="true">↗</span>
+                            </a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+
+            <p class="empty-state" hidden>No projects match this filter yet.</p>
+        </section>
+
+        <section class="about-section section-shell" id="about">
+            <div class="about-card reveal">
+                <div>
+                    <p class="eyebrow eyebrow-light"><span></span> Behind the projects</p>
+                    <h2>Learning by building things that move.</h2>
+                </div>
+                <div class="about-copy">
+                    <p>
+                        These mini projects are practical exercises in modern frontend development.
+                        Every interaction is built with semantic HTML, thoughtful CSS, and vanilla JavaScript.
+                    </p>
+                    <div class="about-stats">
+                        <div><strong>03</strong><span>Featured projects</span></div>
+                        <div><strong>100%</strong><span>Vanilla JavaScript</span></div>
+                        <div><strong>∞</strong><span>Room to explore</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer section-shell">
+        <a class="brand" href="#home">
+            <span class="brand-mark" aria-hidden="true">MP</span>
+            <span>Mini Projects</span>
+        </a>
+        <p>Built with curiosity and JavaScript · <span id="current-year"></span></p>
+        <a class="back-to-top" href="#home">Back to top <span aria-hidden="true">↑</span></a>
+    </footer>
+</body>
+</html>

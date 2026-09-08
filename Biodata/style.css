@@ -1,0 +1,367 @@
+/* ============================================
+   Aryan Rastogi — Personal Biodata Stylesheet
+   File: style.css
+   ============================================ */
+
+/* ── CSS Variables ── */
+:root {
+    --cream:    #FFF8F0;
+    --parchment:#F5E6D3;
+    --orange:   #D4610A;
+    --orange-lt:#F08030;
+    --brown:    #6B3A1F;
+    --text:     #3A2010;
+    --muted:    #8B6045;
+    --border:   #E0C4A0;
+    --white:    #FFFDF9;
+}
+
+/* ── Reset & Base ── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Lato', sans-serif;
+    background-color: var(--cream);
+    color: var(--text);
+    line-height: 1.7;
+}
+
+/* ── Page Wrapper ── */
+.page {
+    max-width: 860px;
+    margin: 40px auto;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-top: 5px solid var(--orange);
+    box-shadow: 0 4px 24px rgba(180, 100, 30, 0.10);
+    padding: 0 0 40px 0;
+}
+
+/* ── Header / Hero ── */
+.hero {
+    background: linear-gradient(135deg, var(--brown) 0%, var(--orange) 100%);
+    padding: 40px 48px;
+    display: flex;
+    align-items: center;
+    gap: 36px;
+}
+
+.hero img {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: top center;
+    border: 4px solid rgba(255,255,255,0.6);
+    flex-shrink: 0;
+}
+
+.hero-text h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: #fff;
+    letter-spacing: 0.5px;
+}
+
+/* pseudo-elements on h1 — like the original file */
+.hero-text h1::before {
+    content: "✦ ";
+    font-size: 1.4rem;
+    opacity: 0.7;
+}
+.hero-text h1::after {
+    content: " ✦";
+    font-size: 1.4rem;
+    opacity: 0.7;
+}
+
+.tagline {
+    color: rgba(255,255,255,0.85);
+    font-style: italic;
+    font-size: 1rem;
+    margin-top: 6px;
+}
+
+.badge-row {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-top: 14px;
+}
+
+.badge {
+    background: rgba(255,255,255,0.18);
+    color: #fff;
+    padding: 3px 12px;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    border: 1px solid rgba(255,255,255,0.35);
+}
+
+/* ── Sections ── */
+.content {
+    padding: 0 48px;
+}
+
+/* Section heading with ::before */
+h2 {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    color: var(--orange);
+    margin: 32px 0 14px 0;
+    padding-bottom: 6px;
+    border-bottom: 2px solid var(--parchment);
+    letter-spacing: 0.3px;
+}
+h2::before {
+    content: "▌ ";
+    color: var(--orange-lt);
+}
+
+/* ── fieldset / legend (from original) ── */
+fieldset {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin-bottom: 18px;
+    background: var(--cream);
+}
+
+legend {
+    font-family: 'Playfair Display', serif;
+    font-weight: 600;
+    color: var(--brown);
+    font-size: 1rem;
+    padding: 0 8px;
+}
+
+/* ── Personal Info Table ── */
+.info-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.info-table td {
+    padding: 6px 10px;
+    font-size: 0.94rem;
+}
+.info-table td:first-child {
+    font-weight: 700;
+    color: var(--muted);
+    width: 160px;
+    white-space: nowrap;
+}
+.info-table td:last-child {
+    color: var(--text);
+}
+
+/* id="highlight" — like #important in original */
+#highlight {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+/* ── Education ── */
+.edu-item {
+    margin-bottom: 14px;
+}
+.edu-item h3 {
+    font-size: 0.98rem;
+    font-weight: 700;
+    color: var(--brown);
+}
+.edu-item p {
+    font-size: 0.90rem;
+    color: var(--muted);
+}
+.edu-item span.year {
+    font-size: 0.82rem;
+    background: var(--parchment);
+    color: var(--orange);
+    border-radius: 4px;
+    padding: 1px 8px;
+    margin-left: 8px;
+}
+
+/* ── Skills ── */
+.skills-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+.skill-group p {
+    font-weight: 700;
+    font-size: 0.88rem;
+    color: var(--muted);
+    margin-bottom: 6px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    list-style: none;
+    padding: 0;
+}
+.tag-list li {
+    background: var(--parchment);
+    color: var(--brown);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 3px 11px;
+    font-size: 0.83rem;
+}
+/* attribute selector — like input[type="text"] in original */
+.tag-list li[data-type="primary"] {
+    background: var(--orange);
+    color: #fff;
+    border-color: var(--orange);
+}
+
+/* ── Hobbies & Interests ── */
+ul.hobbies {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+ul.hobbies li {
+    background: var(--parchment);
+    color: var(--brown);
+    padding: 5px 16px;
+    border-radius: 20px;
+    font-size: 0.88rem;
+    border: 1px solid var(--border);
+}
+ul.hobbies li::before {
+    content: "◈  ";
+    color: var(--orange-lt);
+    font-size: 0.8rem;
+}
+
+/* ── Contact Form ── */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.form-group label {
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: var(--muted);
+}
+
+/* input[type] attribute selectors — like original */
+input[type="text"],
+input[type="email"],
+input[type="tel"] {
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--cream);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    outline: none;
+    transition: border-color 0.2s;
+}
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus {
+    border-color: var(--orange-lt);
+}
+
+/* placeholder styling — like original */
+input::placeholder {
+    color: var(--border);
+    font-style: italic;
+}
+
+textarea {
+    padding: 9px 12px;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    background-color: var(--cream);
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    color: var(--text);
+    resize: vertical;
+    min-height: 80px;
+    outline: none;
+    grid-column: 1 / -1;
+}
+textarea::placeholder {
+    color: var(--border);
+    font-style: italic;
+}
+
+input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    background: var(--orange);
+    color: #fff;
+    border: none;
+    padding: 10px 36px;
+    border-radius: 6px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.95rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.5px;
+    transition: background 0.2s;
+}
+input[type="submit"]:hover {
+    background: var(--brown);
+}
+
+/* ── Social Links ── */
+.social-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+.social-links a {
+    color: var(--orange);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 700;
+    border-bottom: 1px dashed var(--orange-lt);
+}
+.social-links a::before {
+    content: "→ ";
+    font-size: 0.85rem;
+}
+.social-links a:hover {
+    color: var(--brown);
+}
+
+/* ── Footer ── */
+footer {
+    text-align: center;
+    margin-top: 36px;
+    padding-top: 18px;
+    border-top: 1px solid var(--parchment);
+    font-size: 0.82rem;
+    color: var(--muted);
+}
+footer::before {
+    content: "— ";
+}
+footer::after {
+    content: " —";
+}
+
+/* ── Responsive ── */
+@media (max-width: 620px) {
+    .hero { flex-direction: column; padding: 28px 24px; text-align: center; }
+    .content { padding: 0 20px; }
+    .skills-grid, .contact-grid { grid-template-columns: 1fr; }
+}

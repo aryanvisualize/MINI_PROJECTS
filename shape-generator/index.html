@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shape Generator</title>
+    <style>
+        body{
+            background: radial-gradient(circle at top, rgba(254, 196, 252, 0.8), rgba(255, 255, 255, 0.98));
+            background-color: rgb(254, 196, 252);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 0;
+            margin: 0;
+        }
+
+        .controls{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            width: 100%;
+            max-width: 900px;
+        }
+
+        input,
+        select,
+        button{
+            padding: 12px 16px;
+            border: 1px solid;
+            border-radius: 999px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        input::placeholder{
+            color: rgb(189, 60, 189);
+        }
+
+        button{
+            cursor: pointer;
+            background-color: rgb(150, 52, 150);
+            color: white;
+            border: none;
+        }
+
+        .square{
+            width: 100px;
+            height: 100px;
+            background: orange;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .circle{
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin: 10px;
+            display: inline-block;
+            background: blue;
+        }
+
+        .rectangle{
+            width: 200px;
+            height: 100px;
+            background: aquamarine;
+            margin: 10px;
+            display: inline-block;
+        }
+
+        .container{
+            width: 1400px;
+            min-height: 520px;
+            background: beige;
+            border: 1px solid;
+            padding: 20px;
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-content: flex-start;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <input type="text" id="shapeNum" placeholder="Enter the number"/>
+        <select name="shapename" id="shapeName">
+            <option value="">Select the Shape</option>
+            <option value="square">Square</option>
+            <option value="circle">Circle</option>
+            <option value="rectangle">Rectangle</option>
+        </select>
+        <input type="color" id="shapeColor">
+        <button id="btn">Generate</button>
+    </div>
+    <div class="container"></div>
+
+    <script>
+        const btn = document.querySelector("#btn");
+        btn.addEventListener("click",(e)=>{
+            document.querySelector(".container").innerHTML="";
+            const shapeNum = document.querySelector("#shapeNum").value;
+            const shapeName = document.querySelector("#shapeName").value;
+            const shapeColor = document.querySelector("#shapeColor").value;
+            //console.log(shapeNum,shapeName,shapeColor);
+            for(let i=0;i<shapeNum;i++){
+                const ele = document.createElement("div");
+                ele.classList.add(shapeName);
+                ele.style.backgroundColor = shapeColor;
+
+                document.querySelector(".container").appendChild(ele);
+            }
+        })
+    </script>
+</body>
+</html>
